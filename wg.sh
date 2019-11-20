@@ -46,7 +46,7 @@ PostUp   = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACC
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = $port
 DNS = 8.8.8.8
-MTU = 1420
+MTU = 1480
 
 [Peer]
 PublicKey = $c2
@@ -59,7 +59,7 @@ sudo cat > /etc/wireguard/client.conf <<-EOF
 PrivateKey = $c1
 Address = 10.0.0.2/24 
 DNS = 8.8.8.8
-MTU = 1420
+MTU = 1480
 
 [Peer]
 PublicKey = $s2
@@ -132,11 +132,11 @@ EOF
 start_menu(){
     clear
     echo -e "\033[37;45m ====================================\033[0m"
-    echo -e "\033[37;45m 介绍：wireguard脚本              \033[0m"
-    echo -e "\033[37;45m 系统：Ubuntu                        \033[0m"
-    echo -e "\033[37;45m 作者：                      \033[0m"
-    echo -e "\033[37;45m 网站：              \033[0m"
-    echo -e "\033[37;45m                    \033[0m"
+    #echo -e "\033[37;45m 介绍：wireguard脚本              \033[0m"
+    #echo -e "\033[37;45m 系统：Ubuntu                        \033[0m"
+    #echo -e "\033[37;45m 作者：                      \033[0m"
+    #echo -e "\033[37;45m 网站：              \033[0m"
+    #echo -e "\033[37;45m                    \033[0m"
     echo -e "\033[37;45m ====================================\033[0m"
     echo
     echo -e "\033[0;35m 1. 安装wireguard\033[0m"
